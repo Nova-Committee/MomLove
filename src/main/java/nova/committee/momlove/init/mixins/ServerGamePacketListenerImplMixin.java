@@ -1,10 +1,9 @@
 package nova.committee.momlove.init.mixins;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.PlayerChatMessage;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.network.ServerGamePacketListenerImpl;
-import net.minecraft.server.network.TextFilter;
 import nova.committee.momlove.init.callbacks.ServerLevelEvents;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -24,10 +23,10 @@ public class ServerGamePacketListenerImplMixin {
     @Shadow
     public ServerPlayer player;
 
-    @Inject(method = "handleChat(Lnet/minecraft/server/network/TextFilter$FilteredText;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/players/PlayerList;broadcastMessage(Lnet/minecraft/network/chat/Component;Ljava/util/function/Function;Lnet/minecraft/network/chat/ChatType;Ljava/util/UUID;)V"))
-    public void SGPLI_handleChat(TextFilter.FilteredText filteredText, CallbackInfo ci) {
-        String s1 = filteredText.getRaw();
-        Component component2 = new TranslatableComponent("chat.type.text", this.player.getDisplayName(), s1);
+    @Inject(method = "broadcastChatMessage", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/players/PlayerList;broadcastChatMessage(Lnet/minecraft/network/chat/PlayerChatMessage;Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/network/chat/ChatType$Bound;)V"))
+    public void SGPLI_handleChat(PlayerChatMessage playerChatMessage, CallbackInfo ci) {
+        String s1 = playerChatMessage.serverContent().getString();
+        Component component2 = Component.translatable("chat.type.text", this.player.getDisplayName(), s1);
         ServerLevelEvents.Server_Chat.invoker().onChat(this.player, s1, component2);
     }
 }

@@ -2,12 +2,9 @@ package nova.committee.momlove.core.cmds;
 
 import com.mojang.brigadier.context.CommandContext;
 import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.network.chat.Component;
 import nova.committee.momlove.Momlove;
 import nova.committee.momlove.init.handler.ConfigHandler;
-
-import java.util.Collection;
 
 /**
  * Project: MomLove-fabric
@@ -19,10 +16,10 @@ public class DelKeysCmd {
     public static int execute(CommandContext<CommandSourceStack> context, String keyWords) {
         try{
             Momlove.config.getKeyWordsData().remove(keyWords);
-            context.getSource().sendSuccess(new TranslatableComponent("momlove.keys.del.success"), true);
+            context.getSource().sendSuccess(Component.translatable("momlove.keys.del.success"), true);
         }
         catch (Exception e){
-            context.getSource().sendSuccess(new TranslatableComponent("momlove.keys.failure"), true);
+            context.getSource().sendSuccess(Component.translatable("momlove.keys.failure"), true);
         }
         ConfigHandler.onChange();
         return 0;

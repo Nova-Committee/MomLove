@@ -2,10 +2,12 @@ package nova.committee.momlove.init.mixins;
 
 import com.mojang.authlib.GameProfile;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.protocol.PacketUtils;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.player.ProfilePublicKey;
 import net.minecraft.world.level.Level;
 import nova.committee.momlove.init.callbacks.PlayerEvents;
 import org.spongepowered.asm.mixin.Mixin;
@@ -27,8 +29,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class ServerPlayerMixin extends Player {
     @Shadow public abstract void initInventoryMenu();
 
-    public ServerPlayerMixin(Level level, BlockPos blockPos, float f, GameProfile gameProfile) {
-        super(level, blockPos, f, gameProfile);
+    public ServerPlayerMixin(Level level, BlockPos blockPos, float f, GameProfile gameProfile, ProfilePublicKey key) {
+        super(level, blockPos, f, gameProfile, key);
     }
 
     @Inject(method = "tick()V", at = @At(value = "HEAD"))

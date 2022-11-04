@@ -2,7 +2,7 @@ package nova.committee.momlove.core.cmds;
 
 import com.mojang.brigadier.context.CommandContext;
 import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import nova.committee.momlove.Momlove;
@@ -24,9 +24,9 @@ public class UnLoveCMd {
         for (Player player : players){
             try {
                 Momlove.config.getUuidData().remove(player.getUUID());
-                context.getSource().sendSuccess(new TranslatableComponent("momlove.unlove.success"), true);
+                context.getSource().sendSuccess(Component.translatable("momlove.unlove.success"), true);
             } catch (Exception e){
-                context.getSource().sendFailure(new TranslatableComponent("momlove.unlove.failure"));
+                context.getSource().sendFailure(Component.translatable("momlove.unlove.failure"));
             }
         }
         ConfigHandler.onChange();

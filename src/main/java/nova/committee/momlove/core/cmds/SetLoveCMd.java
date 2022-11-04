@@ -2,7 +2,7 @@ package nova.committee.momlove.core.cmds;
 
 import com.mojang.brigadier.context.CommandContext;
 import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import nova.committee.momlove.Momlove;
@@ -22,9 +22,9 @@ public class SetLoveCMd {
         for (Player player : players){
             try {
                 Momlove.config.getUuidData().add(player.getUUID());
-                context.getSource().sendSuccess(new TranslatableComponent("momlove.love.success"), true);
+                context.getSource().sendSuccess(Component.translatable("momlove.love.success"), true);
             } catch (Exception e){
-                context.getSource().sendFailure(new TranslatableComponent("momlove.love.failure"));
+                context.getSource().sendFailure(Component.translatable("momlove.love.failure"));
             }
         }
         ConfigHandler.onChange();
