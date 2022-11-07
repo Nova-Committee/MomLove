@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "committee.nova.momlove.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "momlove.refmap.json",
+  "mixins": [
+    "MixinPlayer",
+    "MixinServerPlayer"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
