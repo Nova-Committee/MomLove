@@ -59,11 +59,12 @@ public class MomLove {
         config = ConfigHandler.load();
     }
 
-    public static boolean setLove(Player player) {
+    public static boolean setLove(Player player, boolean byKey) {
         final var b = MomLove.config.getUuidData().add(player.getUUID());
         ConfigHandler.onChange();
         if (b) LOGGER.info("Set love for player {}", player.getName().getString());
-        if (b) player.displayClientMessage(Component.translatable("momlove.love.success"), true);
+        if (b)
+            player.displayClientMessage(Component.translatable(byKey ? "momlove.keys.success" : "momlove.love.success", Component.translatable("momlove.appellation.you.lower").getString()), true);
         return b;
     }
 
@@ -71,7 +72,8 @@ public class MomLove {
         final var b = MomLove.getConfig().getUuidData().remove(player.getUUID());
         ConfigHandler.onChange();
         if (b) LOGGER.info("Unlove player {}", player.getName().getString());
-        if (b) player.displayClientMessage(Component.translatable("momlove.unlove.success"), true);
+        if (b)
+            player.displayClientMessage(Component.translatable("momlove.unlove.success", Component.translatable("momlove.appellation.you.upper").getString()), true);
         return b;
     }
 
@@ -94,7 +96,7 @@ public class MomLove {
         final var msg = e.getRawText();
         if (MomLove.getConfig().getKeyWordsData().stream().noneMatch(msg::startsWith)) return;
         final var player = e.getPlayer();
-        setLove(player);
+        setLove(player, true);
     }
 
     @SubscribeEvent

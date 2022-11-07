@@ -21,10 +21,10 @@ public class UnLoveCMd {
         for (Player player : players) {
             try {
                 final var contained = MomLove.unLove(player);
-                context.getSource().sendSuccess(Component.translatable(contained ? "momlove.unlove.success" : "momlove.unlove.not_contained"), true);
+                context.getSource().sendSuccess(Component.translatable(contained ? "momlove.unlove.success" : "momlove.unlove.not_contained", player.getName().getString()), true);
             } catch (Exception e) {
                 e.printStackTrace();
-                context.getSource().sendFailure(Component.translatable("momlove.unlove.failure"));
+                context.getSource().sendFailure(Component.translatable("momlove.unlove.failure", player.getName().getString()));
             }
         }
         ConfigHandler.onChange();

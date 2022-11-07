@@ -19,7 +19,7 @@ public class DelKeyCmd {
             context.getSource().sendSuccess(Component.translatable(contained ? "momlove.keys.del.success" : "momlove.keys.del.not_contained"), true);
         } catch (Exception e) {
             e.printStackTrace();
-            context.getSource().sendSuccess(Component.translatable("momlove.keys.failure"), true);
+            context.getSource().sendSuccess(Component.translatable("momlove.keys.del.failure"), true);
         }
         ConfigHandler.onChange();
         return 0;

@@ -19,7 +19,7 @@ public class AddKeyCmd {
             context.getSource().sendSuccess(Component.translatable(notIn ? "momlove.keys.add.success" : "momlove.keys.add.duplicate"), true);
         } catch (Exception e) {
             e.printStackTrace();
-            context.getSource().sendSuccess(Component.translatable("momlove.keys.failure"), true);
+            context.getSource().sendSuccess(Component.translatable("momlove.keys.add.failure"), true);
         }
         ConfigHandler.onChange();
         return 0;
