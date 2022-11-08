@@ -36,7 +36,7 @@ public class MomLove {
     private static Configuration config;
 
     public MomLove() {
-        configFolder = FMLPaths.CONFIGDIR.get();
+        configFolder = FMLPaths.CONFIGDIR.get().resolve("momlove");
         FileUtils.checkFolder(configFolder);
         ModLoadingContext.get().registerExtensionPoint(IExtensionPoint.DisplayTest.class, () -> new IExtensionPoint.DisplayTest(() -> NetworkConstants.IGNORESERVERONLY, (n, s) -> true));
         MinecraftForge.EVENT_BUS.register(this);
