@@ -10,7 +10,6 @@ buildscript {
     }
 }
 
-apply plugin: 'scala'
 apply plugin: 'net.minecraftforge.gradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'org.spongepowered.mixin'
@@ -25,9 +24,6 @@ sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = co
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
-
-tasks.compileJava.dependsOn compileScala
-tasks.compileScala.dependsOn.remove("compileJava")
 
 minecraft {
     mappings channel: mappings_channel, version: mappings_version
@@ -60,7 +56,6 @@ configurations {
 }
 
 dependencies {
-    compile files("$sourceSets.main.scala.outputDir")
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
     if (!project.hasProperty("nomixin")) {
@@ -116,12 +111,6 @@ jar {
 
 sourceSets {
     main {
-        scala {
-            outputDir = file("$buildDir/classes/scala/main")
-        }
-        java {
-            outputDir = file("$buildDir/classes/java/main")
-        }
         output.resourcesDir = output.classesDir
     }
 }
