@@ -10,7 +10,7 @@
   "momlove.keys.add.duplicate": "妈妈已在回应你的呼唤...",
   "momlove.keys.add.failure": "妈妈不知道如何回应...",
   "momlove.keys.del.success": "妈妈不再回应你的呼唤！",
-  "momlove.keys.del.duplicate": "妈妈之前就不会回应你的呼唤...",
+  "momlove.keys.del.not_contained": "妈妈之前就不会回应你的呼唤...",
   "momlove.keys.del.failure": "妈妈不知道如何回应...",
   "momlove.appellation.you.lower": "你",
   "momlove.appellation.you.upper": "你"
