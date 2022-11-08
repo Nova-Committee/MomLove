@@ -1,0 +1,16 @@
+modLoader = "javafml"
+loaderVersion = "[32,)"
+license = "MIT"
+[[mods]]
+modId = "momlove"
+version = "${file.jarVersion}"
+displayName = "MomLove"
+logoFile = "icon.jpg"
+authors = [
+    "cnlimiter",
+    "Rinko1231",
+    "Tapio"
+]
+description = '''
+
+'''
