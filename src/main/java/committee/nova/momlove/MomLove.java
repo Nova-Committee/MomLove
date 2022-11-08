@@ -55,11 +55,6 @@ public class MomLove {
         MomLove.config = config;
     }
 
-    @SubscribeEvent
-    public void onServerStarted(FMLServerStartedEvent e) {
-        config = ConfigHandler.load();
-    }
-
     public static boolean setLove(PlayerEntity player, boolean byKey) {
         final boolean b = MomLove.config.getUuidData().add(player.getUUID());
         ConfigHandler.onChange();
@@ -90,6 +85,11 @@ public class MomLove {
         ConfigHandler.onChange();
         if (b) LOGGER.info("Remove keyword {}", keyWord);
         return b;
+    }
+
+    @SubscribeEvent
+    public void onServerStarted(FMLServerStartedEvent e) {
+        config = ConfigHandler.load();
     }
 
     @SubscribeEvent
