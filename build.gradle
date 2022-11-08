@@ -101,13 +101,12 @@ mixin {
 }
 
 jar {
-    if (project.hasProperty("nomixin")) archivesBaseName += "mixinless"
     from {
         configurations.embed.collect { it.isDirectory() ? it : zipTree(it) }
     } {
         exclude "LICENSE.txt", "META-INF/MANIFSET.MF", "META-INF/maven/**", "META-INF/*.RSA", "META-INF/*.SF"
     }
-
+    if (project.hasProperty("nomixin")) archivesBaseName += "mixinless"
     manifest {
         attributes "ForceLoadAsMod": "true"
         attributes "TweakClass": "org.spongepowered.asm.launch.MixinTweaker"
