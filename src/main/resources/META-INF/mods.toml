@@ -5,7 +5,7 @@ license = "MIT"
 modId = "momlove"
 version = "${file.jarVersion}"
 displayName = "MomLove"
-logoFile = "assets/icon.jpg"
+logoFile = "icon.jpg"
 authors = [
     "cnlimiter",
     "Rinko1231",
