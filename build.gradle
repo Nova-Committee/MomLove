@@ -101,6 +101,7 @@ mixin {
 }
 
 jar {
+    if (project.hasProperty("nomixin")) archivesBaseName += "mixinless"
     from {
         configurations.embed.collect { it.isDirectory() ? it : zipTree(it) }
     } {
