@@ -2,7 +2,7 @@ package nova.committee.momlove.init.config;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.LinkedList;
+import java.util.HashSet;
 import java.util.UUID;
 
 /**
@@ -31,10 +31,10 @@ public class ModConfig {
         return keyWordsData;
     }
 
-    public static class Data extends LinkedList<UUID> {
+    public static class Data extends HashSet<UUID> {
     }
 
-    public static class KeyWords extends LinkedList<String> {
+    public static class KeyWords extends HashSet<String> {
     }
 
 

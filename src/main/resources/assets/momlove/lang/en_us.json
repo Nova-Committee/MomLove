@@ -1,11 +1,17 @@
 {
-
-  "momlove.love.success": "Mom watches you!",
-  "momlove.love.failure": "Mom isn't looking at you!",
-  "momlove.unlove.success": "You were abandoned by mom!",
-  "momlove.unlove.failure": "Mom still loves you!",
-  "momlove.keys.success": "",
-  "momlove.keys.add.success": "",
-  "momlove.keys.del.success": "",
-  "momlove.keys.failure": ""
+  "momlove.love.success": "Mom is watching %s!",
+  "momlove.love.duplicate": "Mom is already watching %s!",
+  "momlove.love.failure": "Mom won't watch %s!",
+  "momlove.unlove.success": "%s got abandoned by mom!",
+  "momlove.unlove.not_contained": "Mom wasn't watching %s before...",
+  "momlove.unlove.failure": "Mom still loves %s!",
+  "momlove.keys.success": "Mom's here",
+  "momlove.keys.add.success": "Mom will respond to your call!",
+  "momlove.keys.add.duplicate": "Mom is already responding to your call...",
+  "momlove.keys.add.failure": "Mom has no idea how to respond...",
+  "momlove.keys.del.success": "Mom no longer responds to your call!",
+  "momlove.keys.del.duplicate": "Mom wasn't responding to your call...",
+  "momlove.keys.del.failure": "Mom has no idea how to respond...",
+  "momlove.appellation.you.lower": "you",
+  "momlove.appellation.you.upper": "You"
 }

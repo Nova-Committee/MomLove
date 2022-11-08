@@ -13,13 +13,13 @@ import nova.committee.momlove.init.handler.ConfigHandler;
  * Description:
  */
 public class AddKeysCmd {
-    public static int execute(CommandContext<CommandSourceStack> context, String keyWords) {
-        try{
-            Momlove.config.getKeyWordsData().add(keyWords);
-            context.getSource().sendSuccess(Component.translatable("momlove.keys.add.success"), true);
-        }
-        catch (Exception e){
-            context.getSource().sendSuccess(Component.translatable("momlove.keys.failure"), true);
+    public static int execute(CommandContext<CommandSourceStack> context, String keyWord) {
+        try {
+            final var notIn = Momlove.addKey(keyWord);
+            context.getSource().sendSuccess(Component.translatable(notIn ? "momlove.keys.add.success" : "momlove.keys.add.duplicate"), true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            context.getSource().sendSuccess(Component.translatable("momlove.keys.add.failure"), true);
         }
         ConfigHandler.onChange();
         return 0;

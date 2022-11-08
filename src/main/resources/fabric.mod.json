@@ -10,7 +10,7 @@
   "contact": {},
   "license": "MIT",
   "icon": "assets/momlove/icon.jpg",
-  "environment": "server",
+  "environment": "*",
   "entrypoints": {
     "main": [
       "nova.committee.momlove.Momlove"

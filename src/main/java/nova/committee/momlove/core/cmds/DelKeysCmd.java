@@ -13,13 +13,13 @@ import nova.committee.momlove.init.handler.ConfigHandler;
  * Description:
  */
 public class DelKeysCmd {
-    public static int execute(CommandContext<CommandSourceStack> context, String keyWords) {
-        try{
-            Momlove.config.getKeyWordsData().remove(keyWords);
-            context.getSource().sendSuccess(Component.translatable("momlove.keys.del.success"), true);
-        }
-        catch (Exception e){
-            context.getSource().sendSuccess(Component.translatable("momlove.keys.failure"), true);
+    public static int execute(CommandContext<CommandSourceStack> context, String keyWord) {
+        try {
+            final var contained = Momlove.delKey(keyWord);
+            context.getSource().sendSuccess(Component.translatable(contained ? "momlove.keys.del.success" : "momlove.keys.del.not_contained"), true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            context.getSource().sendSuccess(Component.translatable("momlove.keys.del.failure"), true);
         }
         ConfigHandler.onChange();
         return 0;
