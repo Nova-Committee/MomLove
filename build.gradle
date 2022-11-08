@@ -114,6 +114,7 @@ sourceSets {
         java {
             outputDir = file("$buildDir/classes/java/main")
         }
+        output.resourcesDir = output.classesDir
     }
 }
 

@@ -1,5 +1,6 @@
 package committee.nova.momlove.command;
 
+import com.google.common.collect.ImmutableList;
 import committee.nova.momlove.MomLove;
 import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.command.CommandBase;
@@ -8,8 +9,10 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.command.WrongUsageException;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentTranslation;
 
+import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
@@ -84,5 +87,26 @@ public class CommandMom extends CommandBase {
     @Override
     public int getRequiredPermissionLevel() {
         return 2;
+    }
+
+    @Override
+    public List<String> getTabCompletions(MinecraftServer server, ICommandSender sender, String[] args, @Nullable BlockPos targetPos) {
+        switch (args.length) {
+            case 1:
+                return getListOfStringsMatchingLastWord(args, ImmutableList.of("love", "unlove", "keys"));
+            case 2: {
+                switch (args[0]) {
+                    case "love":
+                    case "unlove":
+                        return getListOfStringsMatchingLastWord(args, server.getPlayerList().getOnlinePlayerNames());
+                    case "keys":
+                        return getListOfStringsMatchingLastWord(args, ImmutableList.of("add", "del"));
+                    default:
+                        return ImmutableList.of();
+                }
+            }
+            default:
+                return ImmutableList.of();
+        }
     }
 }

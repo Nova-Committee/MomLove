@@ -6,6 +6,7 @@ import committee.nova.momlove.handler.ConfigHandler;
 import committee.nova.momlove.utils.FileUtils;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -28,6 +29,7 @@ public class MomLove {
     public void preInit(FMLPreInitializationEvent e) {
         configFolder = e.getModConfigurationDirectory().toPath().resolve("momlove");
         FileUtils.checkFolder(configFolder);
+        MinecraftForge.EVENT_BUS.register(this);
     }
 
     @Mod.EventHandler
@@ -53,7 +55,7 @@ public class MomLove {
         ConfigHandler.onChange();
         if (b) LOGGER.info("Set love for player {}", player.getName());
         if (b)
-            player.sendStatusMessage(new TextComponentTranslation(byKey ? "momlove.keys.success" : "momlove.love.success", new TextComponentTranslation("momlove.appellation.you.lower").getFormattedText()), true);
+            player.sendStatusMessage(new TextComponentTranslation(byKey ? "msg.momlove.keys.success" : "msg.momlove.love.success", new TextComponentTranslation("momlove.appellation.you.lower").getFormattedText()), true);
         return b;
     }
 
@@ -62,7 +64,7 @@ public class MomLove {
         ConfigHandler.onChange();
         if (b) LOGGER.info("Unlove player {}", player.getName());
         if (b)
-            player.sendStatusMessage(new TextComponentTranslation("momlove.unlove.success", new TextComponentTranslation("momlove.appellation.you.upper").getFormattedText()), true);
+            player.sendStatusMessage(new TextComponentTranslation("msg.momlove.unlove.success", new TextComponentTranslation("momlove.appellation.you.upper").getFormattedText()), true);
         return b;
     }
 
