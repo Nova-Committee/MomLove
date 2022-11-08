@@ -1,0 +1,1 @@
+commands.momlove.usage=/mom love [player: Player]\n/mom unlove [player: Player]\n/mom keys add [keyword: String]\n/mom keys del [keyword: String]
