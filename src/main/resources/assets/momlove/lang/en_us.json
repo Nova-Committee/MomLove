@@ -10,7 +10,7 @@
   "momlove.keys.add.duplicate": "Mom is already responding to your call...",
   "momlove.keys.add.failure": "Mom has no idea how to respond...",
   "momlove.keys.del.success": "Mom no longer responds to your call!",
-  "momlove.keys.del.duplicate": "Mom wasn't responding to your call...",
+  "momlove.keys.del.not_contained": "Mom wasn't responding to your call...",
   "momlove.keys.del.failure": "Mom has no idea how to respond...",
   "momlove.appellation.you.lower": "you",
   "momlove.appellation.you.upper": "You"
