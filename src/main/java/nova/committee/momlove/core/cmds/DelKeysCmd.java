@@ -3,11 +3,8 @@ package nova.committee.momlove.core.cmds;
 import com.mojang.brigadier.context.CommandContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.server.level.ServerPlayer;
 import nova.committee.momlove.Momlove;
 import nova.committee.momlove.init.handler.ConfigHandler;
-
-import java.util.Collection;
 
 /**
  * Project: MomLove-fabric
@@ -16,13 +13,13 @@ import java.util.Collection;
  * Description:
  */
 public class DelKeysCmd {
-    public static int execute(CommandContext<CommandSourceStack> context, String keyWords) {
-        try{
-            Momlove.config.getKeyWordsData().remove(keyWords);
-            context.getSource().sendSuccess(new TranslatableComponent("momlove.keys.del.success"), true);
-        }
-        catch (Exception e){
-            context.getSource().sendSuccess(new TranslatableComponent("momlove.keys.failure"), true);
+    public static int execute(CommandContext<CommandSourceStack> context, String keyWord) {
+        try {
+            final var contained = Momlove.delKey(keyWord);
+            context.getSource().sendSuccess(new TranslatableComponent(contained ? "momlove.keys.del.success" : "momlove.keys.del.not_contained"), true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            context.getSource().sendSuccess(new TranslatableComponent("momlove.keys.del.failure"), true);
         }
         ConfigHandler.onChange();
         return 0;

@@ -1,11 +1,17 @@
 {
-
-  "momlove.love.success": "妈妈注视着你!",
-  "momlove.love.failure": "视线没有到你身上!",
-  "momlove.unlove.success": "你被妈妈抛弃了!",
-  "momlove.unlove.failure": "妈妈仍爱着你!",
+  "momlove.love.success": "妈妈注视着%s!",
+  "momlove.love.duplicate": "妈妈已经在注视%s了...",
+  "momlove.love.failure": "视线没有到%s身上!",
+  "momlove.unlove.success": "%s被妈妈抛弃了!",
+  "momlove.unlove.not_contained": "妈妈之前已经抛弃%s了...",
+  "momlove.unlove.failure": "妈妈仍爱着%s!",
   "momlove.keys.success": "妈妈在",
-  "momlove.keys.add.success": "妈妈回应你的呼唤！",
-  "momlove.keys.del.success": "妈妈被迫离你而去！",
-  "momlove.keys.failure": "妈妈仍爱着你！"
+  "momlove.keys.add.success": "妈妈将回应你的呼唤！",
+  "momlove.keys.add.duplicate": "妈妈已在回应你的呼唤...",
+  "momlove.keys.add.failure": "妈妈不知道如何回应...",
+  "momlove.keys.del.success": "妈妈不再回应你的呼唤！",
+  "momlove.keys.del.duplicate": "妈妈之前就不会回应你的呼唤...",
+  "momlove.keys.del.failure": "妈妈不知道如何回应...",
+  "momlove.appellation.you.lower": "你",
+  "momlove.appellation.you.upper": "你"
 }

@@ -47,7 +47,6 @@ public class ConfigHandler {
                 e.printStackTrace();
             }
         }
-
         return config;
     }
 

@@ -4,10 +4,7 @@
   "package": "nova.committee.momlove.init.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "EntityMixin",
-    "LivingEntityMixin",
-    "PlayerListMixin",
-    "ServerGamePacketListenerImplMixin",
+    "PlayerMixin",
     "ServerPlayerMixin"
   ],
   "client": [

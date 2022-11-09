@@ -17,16 +17,14 @@ import java.util.Collection;
  * Description:
  */
 public class UnLoveCMd {
-
-
     public static int execute(CommandContext<CommandSourceStack> context, Collection<ServerPlayer> players) {
-
-        for (Player player : players){
+        for (Player player : players) {
             try {
-                Momlove.config.getUuidData().remove(player.getUUID());
-                context.getSource().sendSuccess(new TranslatableComponent("momlove.unlove.success"), true);
-            } catch (Exception e){
-                context.getSource().sendFailure(new TranslatableComponent("momlove.unlove.failure"));
+                final var contained = Momlove.unLove(player);
+                context.getSource().sendSuccess(new TranslatableComponent(contained ? "momlove.unlove.success" : "momlove.unlove.not_contained", player.getName().getString()), true);
+            } catch (Exception e) {
+                e.printStackTrace();
+                context.getSource().sendFailure(new TranslatableComponent("momlove.unlove.failure", player.getName().getString()));
             }
         }
         ConfigHandler.onChange();
