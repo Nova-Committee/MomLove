@@ -1,13 +1,13 @@
 package nova.committee.momlove.init.handler;
 
 import com.mojang.brigadier.arguments.StringArgumentType;
-import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
 import nova.committee.momlove.core.cmds.AddKeysCmd;
 import nova.committee.momlove.core.cmds.DelKeysCmd;
 import nova.committee.momlove.core.cmds.SetLoveCMd;
 import nova.committee.momlove.core.cmds.UnLoveCMd;
+import org.quiltmc.qsl.command.api.CommandRegistrationCallback;
 
 
 /**

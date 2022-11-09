@@ -1,15 +1,14 @@
 package nova.committee.momlove;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.entity.player.Player;
 import nova.committee.momlove.init.config.ModConfig;
 import nova.committee.momlove.init.handler.CmdEventHandler;
 import nova.committee.momlove.init.handler.ConfigHandler;
 import nova.committee.momlove.utils.FileUtils;
+import org.quiltmc.loader.api.QuiltLoader;
+import org.quiltmc.qsl.lifecycle.api.event.ServerLifecycleEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,13 +28,13 @@ public class Momlove implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        CONFIG_FOLDER = FabricLoader.getInstance().getConfigDir().resolve("momlove");
+        CONFIG_FOLDER = QuiltLoader.getConfigDir().resolve("momlove");
         FileUtils.checkFolder(CONFIG_FOLDER);
-        ServerLifecycleEvents.SERVER_STARTING.register(this::onServerPreStart);
+        ServerLifecycleEvents.STARTING.register(this::onServerPreStart);
 
-        ServerLifecycleEvents.SERVER_STARTED.register(this::onServerStarted);
+        ServerLifecycleEvents.READY.register(this::onServerStarted);
 
-        ServerLifecycleEvents.SERVER_STOPPING.register(this::onServerStopping);
+        ServerLifecycleEvents.STOPPING.register(this::onServerStopping);
         CmdEventHandler.init();
     }
     public MinecraftServer getServer() {

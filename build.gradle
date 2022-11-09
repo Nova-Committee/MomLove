@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '0.13.20'
+    alias(libs.plugins.quilt.loom)
     id 'maven-publish'
 }
 
@@ -11,19 +11,20 @@ repositories {
 }
 
 dependencies {
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings loom.officialMojangMappings()
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    minecraft libs.minecraft
+    mappings loom.layered {
+        officialMojangMappings()
+    }
+    modImplementation libs.quilt.loader
+    modImplementation libs.quilted.fabric.api
 }
 
 processResources {
     inputs.property "version", project.version
     filteringCharset "UTF-8"
 
-    filesMatching("fabric.mod.json") {
-        expand "version": project.version
+    filesMatching('quilt.mod.json') {
+        expand "version": version
     }
 }
 

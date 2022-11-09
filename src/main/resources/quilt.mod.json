@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "quilt_loader": {
+    "group": "nova.committee",
+    "id": "momlove",
+    "version": "${version}",
+    "metadata": {
+      "name": "Mom's love",
+      "description": "",
+      "contributors": {
+        "cnlimiter": "Owner"
+      },
+      "contact": {
+        "issues": "https://github.com/cnlimiter/MomLove/issues",
+        "sources": "https://github.com/cnlimiter/MomLove"
+      }
+    },
+    "intermediate_mappings": "net.fabricmc:intermediary",
+    "entrypoints": {
+      "init": "nova.committee.momlove.Momlove"
+    },
+    "depends": [
+      {
+        "id": "quilt_loader",
+        "versions": "*"
+      },
+      {
+        "id": "minecraft",
+        "versions": ">=1.19.2"
+      },
+      {
+        "id": "quilted_fabric_api",
+        "versions": ">=1.0.0-"
+      }
+    ]
+  },
+  "mixin": "moreleads.mixins.json"
+}
