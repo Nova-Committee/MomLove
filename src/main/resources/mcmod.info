@@ -1,14 +1,16 @@
 [
   {
-    "modid": "examplemod",
-    "name": "ExampleMod",
-    "description": "Example mixined scala mod!",
+    "modid": "momlove",
+    "name": "MomLove",
+    "description": "Enable keepInventory for individual players!",
     "version": "${version}",
     "mcversion": "${mcversion}",
     "url": "",
     "updateUrl": "",
     "authorList": [
-      "Author"
+      "cnlimiter",
+      "Rinko1231",
+      "Tapio"
     ],
     "credits": "",
     "logoFile": "",

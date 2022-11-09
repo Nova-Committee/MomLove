@@ -1,0 +1,16 @@
+commands.momlove.usage=/mom love [player: Player]\n/mom unlove [player: Player]\n/mom keys add [keyword: String]\n/mom keys del [keyword: String]
+msg.momlove.love.success=Mom is watching %s!
+msg.momlove.love.duplicate=Mom is already watching %s!
+msg.momlove.love.failure=Mom won't watch %s!
+msg.momlove.unlove.success=%s got abandoned by mom!
+msg.momlove.unlove.notContained=Mom wasn't watching %s before...
+msg.momlove.unlove.failure=Mom still loves %s!
+msg.momlove.keys.success=Mom's here
+msg.momlove.keys.add.success=Mom will respond to your call!
+msg.momlove.keys.add.duplicate=Mom is already responding to your call...
+msg.momlove.keys.add.failure=Mom has no idea how to respond...
+msg.momlove.keys.del.success=Mom no longer responds to your call!
+msg.momlove.keys.del.notContained=Mom wasn't responding to your call...
+msg.momlove.keys.del.failure=Mom has no idea how to respond...
+momlove.appellation.you.lower=you
+momlove.appellation.you.upper=You
