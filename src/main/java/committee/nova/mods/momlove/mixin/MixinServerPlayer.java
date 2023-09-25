@@ -1,7 +1,7 @@
-package committee.nova.momlove.mixin;
+package committee.nova.mods.momlove.mixin;
 
 import com.mojang.authlib.GameProfile;
-import committee.nova.momlove.MomLove;
+import committee.nova.mods.momlove.MomLove;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
@@ -15,8 +15,8 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(ServerPlayer.class)
 public abstract class MixinServerPlayer extends Player {
-    public MixinServerPlayer(Level l, BlockPos p, float f, GameProfile g, @Nullable ProfilePublicKey k) {
-        super(l, p, f, g, k);
+    public MixinServerPlayer(Level l, BlockPos p, float f, GameProfile g) {
+        super(l, p, f, g);
     }
 
     @Redirect(method = "restoreFrom", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/GameRules;getBoolean(Lnet/minecraft/world/level/GameRules$Key;)Z"))

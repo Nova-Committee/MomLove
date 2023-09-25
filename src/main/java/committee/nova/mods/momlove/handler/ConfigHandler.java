@@ -1,10 +1,10 @@
-package committee.nova.momlove.handler;
+package committee.nova.mods.momlove.handler;
 
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import committee.nova.momlove.MomLove;
-import committee.nova.momlove.config.Configuration;
+import committee.nova.mods.momlove.MomLove;
+import committee.nova.mods.momlove.config.Configuration;
 import org.apache.commons.io.FileUtils;
 
 import java.io.IOException;

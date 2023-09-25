@@ -1,14 +1,14 @@
-package committee.nova.momlove;
+package committee.nova.mods.momlove;
 
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.logging.LogUtils;
-import committee.nova.momlove.command.AddKeyCmd;
-import committee.nova.momlove.command.DelKeyCmd;
-import committee.nova.momlove.command.SetLoveCMd;
-import committee.nova.momlove.command.UnLoveCMd;
-import committee.nova.momlove.config.Configuration;
-import committee.nova.momlove.handler.ConfigHandler;
-import committee.nova.momlove.utils.FileUtils;
+import committee.nova.mods.momlove.command.AddKeyCmd;
+import committee.nova.mods.momlove.command.DelKeyCmd;
+import committee.nova.mods.momlove.command.SetLoveCMd;
+import committee.nova.mods.momlove.command.UnLoveCMd;
+import committee.nova.mods.momlove.config.Configuration;
+import committee.nova.mods.momlove.handler.ConfigHandler;
+import committee.nova.mods.momlove.utils.FileUtils;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.network.chat.Component;
@@ -92,7 +92,7 @@ public class MomLove {
     }
 
     @SubscribeEvent
-    public void onServerChat(ServerChatEvent.Submitted e) {
+    public void onServerChat(ServerChatEvent e) {
         final var msg = e.getRawText();
         if (MomLove.getConfig().getKeyWordsData().stream().noneMatch(msg::startsWith)) return;
         final var player = e.getPlayer();

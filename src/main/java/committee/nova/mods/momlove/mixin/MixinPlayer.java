@@ -1,6 +1,6 @@
-package committee.nova.momlove.mixin;
+package committee.nova.mods.momlove.mixin;
 
-import committee.nova.momlove.MomLove;
+import committee.nova.mods.momlove.MomLove;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;

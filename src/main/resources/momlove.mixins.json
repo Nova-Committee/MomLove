@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "committee.nova.momlove.mixin",
+  "package": "committee.nova.mods.momlove.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "momlove.refmap.json",
   "mixins": [

@@ -1,4 +1,4 @@
-package committee.nova.momlove.utils;
+package committee.nova.mods.momlove.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

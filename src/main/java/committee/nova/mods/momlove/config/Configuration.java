@@ -1,4 +1,4 @@
-package committee.nova.momlove.config;
+package committee.nova.mods.momlove.config;
 
 import com.google.gson.annotations.SerializedName;
 

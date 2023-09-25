@@ -1,8 +1,8 @@
-package committee.nova.momlove.command;
+package committee.nova.mods.momlove.command;
 
 import com.mojang.brigadier.context.CommandContext;
-import committee.nova.momlove.MomLove;
-import committee.nova.momlove.handler.ConfigHandler;
+import committee.nova.mods.momlove.MomLove;
+import committee.nova.mods.momlove.handler.ConfigHandler;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.network.chat.Component;
 
@@ -16,10 +16,10 @@ public class DelKeyCmd {
     public static int execute(CommandContext<CommandSourceStack> context, String keyWord) {
         try {
             final var contained = MomLove.delKey(keyWord);
-            context.getSource().sendSuccess(Component.translatable(contained ? "momlove.keys.del.success" : "momlove.keys.del.not_contained"), true);
+            context.getSource().sendSuccess(()->Component.translatable(contained ? "momlove.keys.del.success" : "momlove.keys.del.not_contained"), true);
         } catch (Exception e) {
+            context.getSource().sendFailure(Component.translatable("momlove.keys.del.failure"));
             e.printStackTrace();
-            context.getSource().sendSuccess(Component.translatable("momlove.keys.del.failure"), true);
         }
         ConfigHandler.onChange();
         return 0;

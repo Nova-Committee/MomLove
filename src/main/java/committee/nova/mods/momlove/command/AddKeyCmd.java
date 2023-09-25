@@ -1,8 +1,8 @@
-package committee.nova.momlove.command;
+package committee.nova.mods.momlove.command;
 
 import com.mojang.brigadier.context.CommandContext;
-import committee.nova.momlove.MomLove;
-import committee.nova.momlove.handler.ConfigHandler;
+import committee.nova.mods.momlove.handler.ConfigHandler;
+import committee.nova.mods.momlove.MomLove;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.network.chat.Component;
 
@@ -16,10 +16,10 @@ public class AddKeyCmd {
     public static int execute(CommandContext<CommandSourceStack> context, String keyWord) {
         try {
             final var notIn = MomLove.addKey(keyWord);
-            context.getSource().sendSuccess(Component.translatable(notIn ? "momlove.keys.add.success" : "momlove.keys.add.duplicate"), true);
+            context.getSource().sendSuccess(()-> Component.translatable(notIn ?  "momlove.keys.add.success" : "momlove.keys.add.duplicate"), true);
         } catch (Exception e) {
+            context.getSource().sendFailure(Component.translatable("momlove.keys.add.failure"));
             e.printStackTrace();
-            context.getSource().sendSuccess(Component.translatable("momlove.keys.add.failure"), true);
         }
         ConfigHandler.onChange();
         return 0;
