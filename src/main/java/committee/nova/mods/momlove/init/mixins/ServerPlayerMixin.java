@@ -1,13 +1,12 @@
-package nova.committee.momlove.init.mixins;
+package committee.nova.mods.momlove.init.mixins;
 
 import com.mojang.authlib.GameProfile;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.player.ProfilePublicKey;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
-import nova.committee.momlove.Momlove;
+import committee.nova.mods.momlove.Momlove;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;

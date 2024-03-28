@@ -1,4 +1,4 @@
-package nova.committee.momlove.utils;
+package committee.nova.mods.momlove.utils;
 
 
 import java.io.IOException;

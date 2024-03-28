@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "nova.committee.momlove.init.mixins",
+  "package": "committee.nova.mods.momlove.init.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "PlayerMixin",

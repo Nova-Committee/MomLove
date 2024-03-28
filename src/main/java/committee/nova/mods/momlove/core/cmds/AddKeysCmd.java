@@ -1,10 +1,10 @@
-package nova.committee.momlove.core.cmds;
+package committee.nova.mods.momlove.core.cmds;
 
 import com.mojang.brigadier.context.CommandContext;
+import committee.nova.mods.momlove.init.handler.ConfigHandler;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.network.chat.Component;
-import nova.committee.momlove.Momlove;
-import nova.committee.momlove.init.handler.ConfigHandler;
+import committee.nova.mods.momlove.Momlove;
 
 /**
  * Project: MomLove-fabric

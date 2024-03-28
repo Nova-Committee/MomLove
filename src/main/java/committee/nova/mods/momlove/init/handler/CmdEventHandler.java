@@ -1,13 +1,13 @@
-package nova.committee.momlove.init.handler;
+package committee.nova.mods.momlove.init.handler;
 
 import com.mojang.brigadier.arguments.StringArgumentType;
+import committee.nova.mods.momlove.core.cmds.AddKeysCmd;
+import committee.nova.mods.momlove.core.cmds.DelKeysCmd;
+import committee.nova.mods.momlove.core.cmds.SetLoveCMd;
+import committee.nova.mods.momlove.core.cmds.UnLoveCMd;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
-import nova.committee.momlove.core.cmds.AddKeysCmd;
-import nova.committee.momlove.core.cmds.DelKeysCmd;
-import nova.committee.momlove.core.cmds.SetLoveCMd;
-import nova.committee.momlove.core.cmds.UnLoveCMd;
 
 
 /**

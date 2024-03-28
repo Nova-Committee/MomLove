@@ -13,7 +13,7 @@
   "environment": "server",
   "entrypoints": {
     "main": [
-      "nova.committee.momlove.Momlove"
+      "committee.nova.mods.momlove.Momlove"
     ]
   },
   "mixins": [

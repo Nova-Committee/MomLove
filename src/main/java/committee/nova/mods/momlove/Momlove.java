@@ -1,15 +1,14 @@
-package nova.committee.momlove;
+package committee.nova.mods.momlove;
 
+import committee.nova.mods.momlove.init.config.ModConfig;
+import committee.nova.mods.momlove.init.handler.ConfigHandler;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.entity.player.Player;
-import nova.committee.momlove.init.config.ModConfig;
-import nova.committee.momlove.init.handler.CmdEventHandler;
-import nova.committee.momlove.init.handler.ConfigHandler;
-import nova.committee.momlove.utils.FileUtils;
+import committee.nova.mods.momlove.init.handler.CmdEventHandler;
+import committee.nova.mods.momlove.utils.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
