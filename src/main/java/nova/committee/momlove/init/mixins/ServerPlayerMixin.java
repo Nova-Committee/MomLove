@@ -21,8 +21,8 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(value = ServerPlayer.class, priority = 1001)
 public abstract class ServerPlayerMixin extends Player {
-    public ServerPlayerMixin(Level level, BlockPos blockPos, float f, GameProfile gameProfile, ProfilePublicKey key) {
-        super(level, blockPos, f, gameProfile, key);
+    public ServerPlayerMixin(Level level, BlockPos blockPos, float f, GameProfile gameProfile) {
+        super(level, blockPos, f, gameProfile);
     }
 
     @Redirect(method = "restoreFrom", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/GameRules;getBoolean(Lnet/minecraft/world/level/GameRules$Key;)Z"))

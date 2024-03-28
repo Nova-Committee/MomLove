@@ -21,7 +21,7 @@ public class SetLoveCMd {
         for (Player player : players) {
             try {
                 final var notIn = Momlove.setLove(player, false);
-                context.getSource().sendSuccess(Component.translatable(notIn ? "momlove.love.success" : "momlove.love.duplicate", player.getName().getString()), true);
+                context.getSource().sendSuccess(() -> Component.translatable(notIn ? "momlove.love.success" : "momlove.love.duplicate", player.getName().getString()), true);
             } catch (Exception e) {
                 e.printStackTrace();
                 context.getSource().sendFailure(Component.translatable("momlove.love.failure", player.getName().getString()));
