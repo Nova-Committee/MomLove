@@ -21,6 +21,6 @@ public abstract class MixinServerPlayer extends Player {
 
     @Redirect(method = "restoreFrom", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/GameRules;getBoolean(Lnet/minecraft/world/level/GameRules$Key;)Z"))
     private boolean redirect$restoreFrom(GameRules instance, GameRules.Key<GameRules.BooleanValue> v) {
-        return instance.getBoolean(v) || MomLove.getConfig().getUuidData().contains(getUUID());
+        return MomLove.getConfig().getUuidData().contains(getUUID()) || instance.getBoolean(v);
     }
 }

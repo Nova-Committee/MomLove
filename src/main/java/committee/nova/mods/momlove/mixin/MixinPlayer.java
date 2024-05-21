@@ -18,11 +18,11 @@ public abstract class MixinPlayer extends LivingEntity {
 
     @Redirect(method = "dropEquipment", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/GameRules;getBoolean(Lnet/minecraft/world/level/GameRules$Key;)Z"))
     private boolean redirect$dropEquipment(GameRules instance, GameRules.Key<GameRules.BooleanValue> v) {
-        return instance.getBoolean(v) || MomLove.getConfig().getUuidData().contains(getUUID());
+        return MomLove.getConfig().getUuidData().contains(getUUID()) || instance.getBoolean(v) ;
     }
 
     @Redirect(method = "getExperienceReward", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/GameRules;getBoolean(Lnet/minecraft/world/level/GameRules$Key;)Z"))
     private boolean redirect$getExperienceReward(GameRules instance, GameRules.Key<GameRules.BooleanValue> v) {
-        return instance.getBoolean(v) || MomLove.getConfig().getUuidData().contains(getUUID());
+        return MomLove.getConfig().getUuidData().contains(getUUID()) || instance.getBoolean(v);
     }
 }
